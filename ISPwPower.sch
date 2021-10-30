@@ -1,0 +1,206 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "ISP Breadboard Adapter"
+Date "2021-09-17"
+Rev "A"
+Comp ""
+Comment1 "with Power"
+Comment2 "ISP-0100"
+Comment3 "R WRIGHT"
+Comment4 ""
+$EndDescr
+$Comp
+L Alpenglow:AVR-ISP-6 J1
+U 1 1 614A2A2E
+P 2600 2000
+F 0 "J1" H 2550 2567 50  0000 C CNN
+F 1 "AVR-ISP-6" H 2550 2476 50  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x03_P2.54mm_Vertical" V 2350 2050 50  0001 C CNN
+F 3 " ~" H 1325 1450 50  0001 C CNN
+	1    2600 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Alpenglow:Conn_01x02 J2
+U 1 1 614ADAF8
+P 6450 1850
+F 0 "J2" H 6322 1841 50  0000 R CNN
+F 1 "Conn_01x02" H 6322 1750 50  0000 R CNN
+F 2 "Alpenglow:Conn_1x02" H 6450 1850 50  0001 C CNN
+F 3 "~" H 6450 1850 50  0001 C CNN
+	1    6450 1850
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 1750 3200 1750
+Wire Wire Line
+	3200 1750 3200 1600
+Wire Wire Line
+	2900 1850 4000 1850
+Wire Wire Line
+	4000 1850 4000 4650
+Wire Wire Line
+	4000 4650 6350 4650
+$Comp
+L Alpenglow:+V #PWR01
+U 1 1 614AF031
+P 3200 1500
+F 0 "#PWR01" H 3200 1350 50  0001 C CNN
+F 1 "+V" H 3204 1675 50  0000 C CNB
+F 2 "" H 3200 1500 50  0001 C CNN
+F 3 "" H 3200 1500 50  0001 C CNN
+	1    3200 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 1950 3200 1950
+Wire Wire Line
+	3200 1950 3200 2200
+Connection ~ 3200 1950
+Wire Wire Line
+	3200 1950 5850 1950
+$Comp
+L Alpenglow:GND #PWR02
+U 1 1 614B10D8
+P 3200 2200
+F 0 "#PWR02" H 3200 1950 50  0001 C CNN
+F 1 "GND" H 3205 2027 50  0001 C CNN
+F 2 "" H 3200 2200 50  0001 C CNN
+F 3 "" H 3200 2200 50  0001 C CNN
+	1    3200 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 4550 1800 4550
+Wire Wire Line
+	1800 4550 1800 1750
+Wire Wire Line
+	6350 4450 1950 4450
+Wire Wire Line
+	1950 4450 1950 1850
+Wire Wire Line
+	6350 4350 2100 4350
+Wire Wire Line
+	2100 4350 2100 1950
+Wire Wire Line
+	5850 1950 5850 2300
+Connection ~ 5850 1950
+Wire Wire Line
+	5850 1950 6250 1950
+Connection ~ 3200 1600
+Wire Wire Line
+	3200 1600 3200 1500
+$Comp
+L Alpenglow:SW_SPDT SW1
+U 1 1 614B5911
+P 4350 1600
+F 0 "SW1" H 4350 1885 50  0000 C CNN
+F 1 "SW_SPDT" H 4350 1794 50  0000 C CNN
+F 2 "Alpenglow:SW_SLIDE_RTA" H 4350 1600 50  0001 C CNN
+F 3 "~" H 4350 1600 50  0001 C CNN
+	1    4350 1600
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	6050 1850 6250 1850
+NoConn ~ 4550 1500
+$Comp
+L Alpenglow:RES R1
+U 1 1 614B8B63
+P 4800 2650
+F 0 "R1" H 4870 2696 50  0000 L CNN
+F 1 "470" H 4870 2605 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical" H 4800 2650 50  0001 C CNN
+F 3 "~" H 4800 2650 50  0001 C CNN
+	1    4800 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 2750 4800 2850
+$Comp
+L Alpenglow:LED D1
+U 1 1 614B9818
+P 4800 2950
+F 0 "D1" V 4900 3050 50  0000 C CNN
+F 1 "LED" V 4800 3066 50  0000 C CNN
+F 2 "Alpenglow:LED_D3.0mm" V 4800 2950 50  0001 C CNN
+F 3 "~" V 4800 2950 50  0001 C CNN
+	1    4800 2950
+	0    -1   -1   0   
+$EndComp
+Text Label 6100 4350 0    50   ~ 0
+RES
+Text Label 6100 4450 0    50   ~ 0
+SCK
+Text Label 6100 4550 0    50   ~ 0
+MISO
+Text Label 6100 4650 0    50   ~ 0
+MOSI
+Wire Wire Line
+	2100 1950 2200 1950
+Wire Wire Line
+	1950 1850 2200 1850
+Wire Wire Line
+	1800 1750 2200 1750
+Wire Wire Line
+	4800 3050 4800 3150
+$Comp
+L Alpenglow:GND #PWR03
+U 1 1 614BE336
+P 4800 3150
+F 0 "#PWR03" H 4800 2900 50  0001 C CNN
+F 1 "GND" H 4805 2977 50  0001 C CNN
+F 2 "" H 4800 3150 50  0001 C CNN
+F 3 "" H 4800 3150 50  0001 C CNN
+	1    4800 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Alpenglow:Conn_01x02 J3
+U 1 1 614BEC3F
+P 6450 2200
+F 0 "J3" H 6322 2191 50  0000 R CNN
+F 1 "Conn_01x02" H 6322 2100 50  0000 R CNN
+F 2 "Alpenglow:Conn_1x02" H 6450 2200 50  0001 C CNN
+F 3 "~" H 6450 2200 50  0001 C CNN
+	1    6450 2200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 1850 6050 2200
+Wire Wire Line
+	6050 2200 6250 2200
+Wire Wire Line
+	5850 2300 6250 2300
+Text Label 5750 1700 0    50   ~ 0
+Vin
+$Comp
+L Alpenglow:Conn_01x04 J4
+U 1 1 617B98D7
+P 6550 4550
+F 0 "J4" H 6730 4642 50  0000 L CNN
+F 1 "Conn_01x04" H 6730 4551 50  0000 L CNN
+F 2 "Alpenglow:Conn_1x04_THRU" H 6550 4550 50  0001 C CNN
+F 3 "~" H 6550 4550 50  0001 C CNN
+	1    6550 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 1600 4150 1600
+Wire Wire Line
+	4550 1700 4800 1700
+Wire Wire Line
+	5750 1700 5750 1850
+Wire Wire Line
+	5750 1850 6050 1850
+Connection ~ 6050 1850
+Wire Wire Line
+	4800 2550 4800 1700
+Connection ~ 4800 1700
+Wire Wire Line
+	4800 1700 5750 1700
+$EndSCHEMATC
